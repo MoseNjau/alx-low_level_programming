@@ -1,19 +1,19 @@
-#include <stdio.h>
-
+#include<stdio.h>
 /**
-* main: main executed function
-*
-* return: is always 0
-*/
-
+ * main - Entry point
+ *
+ * Description: Assigns random number
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
-	int j;
-	char k;
-	
-	for (j = 0 ; j < 10 ; j++)
-		putchar(j + '0');
-	for (k = 'a' ; j <= 'f' ; j++)
-		putchar(k);
+	char a, mi;
+
+	for (a = '0'; a <= '9'; a++)
+		putchar(a);
+	for (mi = 'a'; mi <= 'f'; mi++)
+		putchar(mi);
 	putchar('\n');
 	return (0);
+}

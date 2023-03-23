@@ -1,19 +1,17 @@
-#include <stdio.h>
-
+#include<stdio.h>
 /**
-* main : print the alphabet
-*
-* Return Always 0(success)
-*/
-
+ * main - Entry point
+ *
+ * Description: Assigns random number
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
-	char alpha[26} = "abcdefghijklmnopqrstuvwxyz";
-	int i;
+	char mi;
 
-	for(i = 0; i < 26; i++)
-	{
-		putchar(alpha[i]);
-	}
+	for (mi = 'a'; mi <= 'z'; mi++)
+		putchar(mi);
 	putchar('\n');
 	return (0);
+}

@@ -1,17 +1,23 @@
-#include <stdio.h>
-
+#include<stdio.h>
 /**
-* main: main executed function
-*
-* return: is always 0
-*/
-
+ * main - Entry point
+ *
+ * Description: Assigns random number
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
-	int i;
+	int mi;
 
-	for (i = 0 ; i < 10 ; i++)
-		putchar(i + '0');
+	for (mi = 48; mi < 58; mi++)
+	{
+		putchar(mi);
+		if (mi < 57)
+			putchar(',');
+		if (mi < 57)
+			putchar(' ');
+	}
 	putchar('\n');
 	return (0);
 }

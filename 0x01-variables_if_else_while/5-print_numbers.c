@@ -1,17 +1,17 @@
-#include <stdio.h>
-
+#include<stdio.h>
 /**
-* main - main function
-*
-* return : always 0
-*/
-
+ * main - Entry point
+ *
+ * Description: Assigns random number
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
-	int j;
+	int mi;
 
-	for (j = 0 ; j < 10 ; j++)
-		print("%d", j);
+	for (mi = 0; mi < 10; mi++)
+		printf("%d", mi);
 	printf("\n");
 	return (0);
 }

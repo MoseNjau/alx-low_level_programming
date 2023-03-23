@@ -1,20 +1,29 @@
-#include <stdio.h>
-
+#include<stdio.h>
 /**
-* main: main executed function
-*
-* return: is always 0
-*/
-
+ * main - Entry point
+ *
+ * Description: Assigns random number
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
-	int k;
-	char n;
+	int first, mid, last;
 
-	for (k = 0 ; k < 10 ; k++)
-		putchar(k + '0');
-	for(n = 'a' ; n <= 'f' ; n++)
-		putchar(n);
+	for (first = 48; first < 56; first++)
+		for (mid = (first + 1); mid < 57; mid++)
+			for (last = (mid + 1); last <= 57; last++)
+			{
+				putchar(first);
+				putchar(mid);
+				putchar(last);
+				if (first + mid + last != 168)
+				{
+					putchar(',');
+					putchar(' ');
+				}
+			}
 	putchar('\n');
-	return (0)
+	return (0);
 }
+

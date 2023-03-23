@@ -1,12 +1,11 @@
-#!/bin/bash
 #include<stdio.h>
 /**
-* main- entry
-* 
-* return will be 0, sucess 
+* main - Entry point
+* @puts() - Writes a lin/string to the output.
+* Return: Always 0 (Success)
 */
-int main(void){
-	 puts("Programming is like building a multilingual puzzle
-");
-   	 return (0);
+int main(void)
+{
+	puts("\"Programming is like building a multilingual puzzle");
+	return (0);
 }

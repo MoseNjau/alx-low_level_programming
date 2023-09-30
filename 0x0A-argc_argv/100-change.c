@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 			cents -= coins[i];
 			count++;
 		}
-		printf("%d\n", count);
 	}
+	printf("%d\n", count);
 	return (0);
 }

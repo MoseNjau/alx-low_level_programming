@@ -14,6 +14,7 @@ int main(int argc, char *argv[])
 	int num2;
 
 	int answer;
+
 	if (argc != 3)
 	{
 		printf("Error\n");

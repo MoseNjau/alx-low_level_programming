@@ -11,9 +11,9 @@ int main(int argc, char *argv[])
 {
 	int num1;
 
-	num2;
+	int num2;
 
-	answer;
+	int answer;
 	if (argc != 3)
 	{
 		printf("Error\n");

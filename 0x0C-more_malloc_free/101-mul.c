@@ -9,7 +9,7 @@
 
 int isNumber(const char *str)
 {
-	while(*str)
+	while (*str)
 	{
 		if (!isdigit(*str))
 			return (0);
@@ -27,7 +27,7 @@ int isNumber(const char *str)
 
 int productNumbers(int num1, int num2)
 {
-	return num1 * num2;
+	return (num1 * num2);
 }
 
 /**

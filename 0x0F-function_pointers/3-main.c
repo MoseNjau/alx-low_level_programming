@@ -6,7 +6,8 @@
  * main - Entry point of the program
  * @argc: Argument count
  * @argv: Array of command-line arguments
- * Return: 0 on success, 1 for incorrect argument count, 2 for negative bytes, 3 on error
+ * Return: 0 on success, 1 for incorrect argument count, 2
+ * for negative bytes, 3 on error
  */
 int main(int argc, char *argv[])
 {

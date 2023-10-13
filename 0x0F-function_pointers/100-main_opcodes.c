@@ -1,84 +1,55 @@
-#include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
+#include <stdio.h>
 
 /**
- * print_opcodes - Print opcodes as specified
- * @opcodes: Array of opcodes
- * @count: Number of opcodes to print
+ * print_opcodes - print the opcodes of a function
+ * @func: a pointer to the function
+ * @n: number of bytes to print
+ *
+ * Return: void
  */
-void print_opcodes(unsigned char *opcodes, size_t count)
+
+void print_opcodes(void *function, int n)
 {
-	for (size_t i = 0; i < count; i++)
+	unsigned char *bytes = (unsigned char*)function;
+	int i;
+
+	for (i = 0; i < n; i++)
 	{
-		printf("%02x", opcodes[i]);
-		if (i < count - 1)
-		{
+		printf("%.2x", bytes[i]);
+		if (i < n-1)
+
 			printf(" ");
-		}
 	}
 	printf("\n");
 }
 
 /**
- * main - Entry point of the program
- * @argc: Argument count
- * @argv: Array of command-line arguments
- * Return: 0 on success, 1 for incorrect argument count, 2 for negative bytes,
- * 3 on error
+ * main - prints the opcodes of its own main function
+ * @argc: number of arguments
+ * @argv: array of argument strings
+ *
+ * Return: 0 on success, 1 or 2 on error
  */
+
 int main(int argc, char *argv[])
 {
+	int n;
+
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
+	n = atoi(argv[1]);
 
-	int num_bytes = atoi(argv[1]);
-
-	if (num_bytes < 0)
+	if (n < 0)
 	{
 		printf("Error\n");
 		return (2);
 	}
 
-	char command[100];
-
-	snprintf(command, sizeof(command), 
-			"objdump -d -j.text -M intel %s | grep '<main>:' -A %d",
-		       	argv[0], num_bytes);
-
-	FILE *pipe = popen(command, "r");
-	if (pipe == NULL)
-	{
-		perror("popen");
-		return (3);
-	}
-
-	char line[100];
-	unsigned char opcodes[200];
-
-	size_t opcode_count = 0;
-	while (fgets(line, sizeof(line), pipe) != NULL)
-	{
-		char *token = strtok(line, ":");
-		if (token != NULL)
-		{
-			while ((token = strtok(NULL, " \t")))
-			{
-				if (opcode_count < num_bytes)
-				{
-					sscanf(token, "%02x", &opcodes[opcode_count]);
-					opcode_count++;
-				}
-			}
-		}
-	}
-
-	print_opcodes(opcodes, opcode_count);
-	pclose(pipe);
+	print_opcodes(main, n);
 
 	return (0);
 }

@@ -11,13 +11,13 @@
 
 void print_opcodes(void *function, int n)
 {
-	unsigned char *bytes = (unsigned char*)function;
+	unsigned char *bytes = (unsigned char *)function;
 	int i;
 
 	for (i = 0; i < n; i++)
 	{
 		printf("%.2x", bytes[i]);
-		if (i < n-1)
+		if (i < n - 1)
 
 			printf(" ");
 	}

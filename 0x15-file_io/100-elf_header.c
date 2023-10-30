@@ -127,16 +127,12 @@ void print_data(unsigned char *e_ident)
  *           how to interpret the file
  *
  * Return: nothing
-*/
+ */
 void print_version(unsigned char *e_ident)
 {
-	printf("  Version:                           ");/*EI_VERSION - File version*/
-
-	if (e_ident[EI_VERSION] == EV_CURRENT)
-		printf("%d (current)\n", e_ident[EI_VERSION]);
-	else
-		printf("%i\n", e_ident[EI_VERSION]);
+	printf("  Version:                           %d\n", e_ident[EI_VERSION]);
 }
+
 
 /**
  * print_osabi - prints the OS/ABI of the ELF file

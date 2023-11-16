@@ -9,32 +9,33 @@
  */
 unsigned long int _pow(unsigned int base, unsigned int power)
 {
-	unsigned long int randomNo;
+	unsigned long int num;
 	unsigned int i;
 
-	randomNo = 1;
+	num = 1;
 	for (i = 1; i <= power; i++)
-		randomNo *= base;
-	return (randomNo);
+		num *= base;
+	return (num);
 }
 
 /**
- * print_binary - prints a number in binary notation
- * @n: number to print
- *
- * Return: void
- */
+* print_binary - prints a number in binary notation
+* @n: prints a number in binary notation
+*
+* Return: void
+*/
+
 void print_binary(unsigned long int n)
 {
-	unsigned long int divisor, checker;
+	unsigned long int divisor, check;
 	char flag;
 
 	flag = 0;
 	divisor = _pow(2, sizeof(unsigned long int) * 8 - 1);
 	while (divisor != 0)
 	{
-		checker = n & divisor;
-		if (checker == divisor)
+		check = n & divisor;
+		if (check == divisor)
 		{
 			flag = 1;
 			_putchar('1');
